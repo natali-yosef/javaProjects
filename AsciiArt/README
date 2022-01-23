@@ -1,0 +1,22 @@
+nataliy
+319085726
+
+For the first part I defined a new class called 'SingleChar'.
+For every char in the array chars, there is brightness value for the char, and the normalized value.
+For efficiency I saved the parameters for the brightness value (pixelForBrightness, fontForBrightness),
+and the parameters for the normalized value (minForNormalize, maxForNormalize), in order not to need
+calculate them over and over again.
+with the information of the second part, I could defined a map.
+
+In my opinion it was the right design template for the project because every char has is own
+ brightness value and normalized value.
+
+For the second part we used with hash map collection for the sub images and hash set
+collection for saving the chars.
+
+I added png file with ascii image named 'squidwardAscii.png'.
+
+algorithms:
+    1) run time is O(n) and O(1) memory.
+    2) run time is O(n) , n represent the sum of all the words lens.
+
