@@ -1,0 +1,25 @@
+nataliy
+319085726
+
+clever strategy:
+ adds the mark next to another cell with the same mark.
+
+snartypamts strategy:
+    first of all check if the player can win by putting one more mark,
+        if so, add the mark to the correct place and win.
+    if not, check if the enemy can win by putting one more mark,
+        if so, block the enemy by putting the mark there.
+    if not, find the longest streak of the player in the board and add one more.
+
+player1 = snartypamts, player2 = clever (500 rounds)
+    score player1: 346, score player2: 154, score even: 0.
+
+player1 = snartypamts, player2 = whatever (500 rounds)
+    score player1: 494, score player2: 6, score even: 0.
+
+player1 = clever, player2 = whatever (500 rounds)
+    score player1: 468, score player2: 32, score even: 0.
+
+player1 = whatever, player2 = whatever (10000 rounds)
+    score player1: 4951, score player2: 5049, score even: 0.
+
