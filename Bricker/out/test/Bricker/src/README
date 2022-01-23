@@ -1,0 +1,54 @@
+nataliy
+319085726
+
+We chose to implement the behaviors of the brick as Decorator:
+      - Remove : the basic strategy, simply delete the brick from the game.
+
+      - Add paddle : delete the brick from the game and add one more paddle,
+                     and after 3 collisions with the paddle, the paddle disappear.
+
+      - Change camera : delete the brick from the game and if the main ball collide with the brick
+                        the camera is tracking after the ball until the ball collide with 3 different
+                        game objects.
+
+      - Puck : delete the brick from the game and release 3 more balls to the game.
+                The balls acts like the main ball, but doesn't affect the lives in the game.
+
+      - Set dimensions paddle : delete the brick from the game and release a status game object,
+                                randomly wide on narrow, that affects only on the paddles in the game.
+
+Every behavior in the game is decorating the main behavior, the remove.
+
+The behavior for every brick selected randomly, we control the behaviors in the factory.
+All the behaviors classes inheritance from CollisionStrategy, that help us to
+write more flexible code, we don't need to know the collision strategy type,
+and to add or remove behavior we only need to change the factory class.
+We get the collusion type randomly from getCollusion method in the factory class.
+
+Every class of the above gets another behavior to decorate and override the method onCollision.
+The decorator calls the decorate behavior onCollision method as wall.
+
+In addition, one more option is the Double behavior - one brick can have two or three different behaviors.
+
+**Every time that we create a ball or a puck ball, we reloaded the sound of the collision.
+To avoid the reloading I defined a static public attribute to the factory class, and every time the puck
+strategy is called we use the static attribute. Same to the image ball.**
+
+Algorithms:
+    - alotStudyTime : greedy algorithm, after sorting the arrays, correlations between the tasks and the time
+                      for task. That works only because the arrays sorted.
+                      runTime : the worst case - n*m
+
+    - minLeap : greedy algorithm, check before every step if there is another step that can give
+                a better solution.
+                runTime : the worst case - n*n
+
+    - bucketWalk : dynamic algorithm, for 0 litter or 1 litter there is only
+                   one option. Every other number of litters, n, can fill with n-1 + n-2 different ways.
+                   runTime : the worst case - n
+
+    - numTrees : dynamic algorithm, for every number, n, the number of different trees is
+                (numTrees for x)*(numTrees for y) for every x,y such that x+y=n.
+                 runTime : the worst case - n*n
+
+
